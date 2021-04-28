@@ -20,7 +20,7 @@ app.post("/contact", function (req, res) {
     service: "gmail",
     auth: {
       user: "thekittrellcompany@gmail.com",
-      pass: process.env.test,
+      pass: process.env.email_pass,
     },
   });
 
