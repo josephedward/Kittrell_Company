@@ -8,10 +8,11 @@ const path = require("path");
 var nodemailer = require("nodemailer");
 
 app.use(express.json());
-app.use(express.urlencoded({ extended: true })) /
-  app.get("/", function (req, res) {
-    res.sendFile("index.html", { root: path.join(__dirname, "./") });
-  });
+app.use(express.urlencoded({ extended: true }));
+
+app.get("/", function (req, res) {
+  res.sendFile("index.html", { root: path.join(__dirname, "./") });
+});
 
 app.post("/contact", function (req, res) {
   req.body.name;
@@ -56,10 +57,18 @@ app.post("/contact", function (req, res) {
     from: "thekittrellcompany.com website",
     to: "thekittrellcompany@gmail.com",
     subject: "Contact Submission from Website",
-    text: 'Name: '+req.body.name+'\n'
-     +'Phone: '+req.body.phone+'\n'
-     +'Email: '+req.body.email+'\n'
-     +'Message: '+req.body.message
+    text:
+      "Name: " +
+      req.body.name +
+      "\n" +
+      "Phone: " +
+      req.body.phone +
+      "\n" +
+      "Email: " +
+      req.body.email +
+      "\n" +
+      "Message: " +
+      req.body.message,
   };
 
   transporter.sendMail(contactOptions, function (error, info) {
@@ -69,10 +78,12 @@ app.post("/contact", function (req, res) {
       console.log("Admin Email sent: " + info.response);
     }
   });
-
-
-
 });
+
+
+app.get("/gmaps", function(req, res){
+  res.send(process.env.gmaps_apikey)
+})
 
 app.listen(PORT, function () {
   console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
