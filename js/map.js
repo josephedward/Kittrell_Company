@@ -5,7 +5,8 @@
 let gmaps_apikey = "";
 axios.get("/gmaps").then(function (res) {
 
-  gmaps_apikey = res.data;
+
+  gmaps_apikey = decrypt(res.data);
   var script = document.createElement("script");
   script.src = `https://maps.googleapis.com/maps/api/js?key=${gmaps_apikey}&callback=initMap`;
   script.async = true;
@@ -58,4 +59,12 @@ axios.get("/gmaps").then(function (res) {
 
   // Append the 'script' element to 'head'
   document.head.appendChild(script);
+
 });
+
+function decrypt(message = '', key = ''){
+    var code = CryptoJS.AES.decrypt(message, key);
+    var decryptedMessage = code.toString(CryptoJS.enc.Utf8);
+
+    return decryptedMessage;
+}
