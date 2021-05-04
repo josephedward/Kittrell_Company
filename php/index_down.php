@@ -73,7 +73,7 @@
 		}
 		</style>
 		<div class="logo">
-			<img src="Kittrell_logo.jpg" style="max-width:100%">
+			<img src="../images/Kittrell_logo.jpg" style="max-width:100%">
 		</div>
 		<div class="message">
 			<h4>Under Maintenance</h4>

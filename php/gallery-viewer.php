@@ -8,7 +8,7 @@
                                 $item = $_GET['item'];
                         ?>
                                 <script>
-                                        console.log(imageSource)
+                                        // console.log(imageSource)
                                         // `images/gallery/${imageSource}.jpg`
                                         imageString = `<img src="images/gallery/${imageSource}.jpg" alt="" class="img-responsive" />`
                                         localDom = $("div.container.project-view")
