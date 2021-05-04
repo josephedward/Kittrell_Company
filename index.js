@@ -1,5 +1,6 @@
 require("dotenv").config();
 
+
 const express = require("express");
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -12,12 +13,15 @@ const CryptoJS = require('crypto-js');
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+
 app.get("/", function (req, res) {
   res.sendFile("index.html", { root: path.join(__dirname, "./") });
 });
 
+
 app.post("/contact", function (req, res) {
   req.body.name;
+
 
   var transporter = nodemailer.createTransport({
     service: "gmail",
@@ -26,6 +30,7 @@ app.post("/contact", function (req, res) {
       pass: process.env.email_pass,
     },
   });
+
 
   var mailOptions = {
     from: "thekittrellcompany@gmail.com",
@@ -46,6 +51,7 @@ app.post("/contact", function (req, res) {
       "The Kittrell Company",
   };
 
+  
   transporter.sendMail(mailOptions, function (error, info) {
     if (error) {
       console.log(error);
