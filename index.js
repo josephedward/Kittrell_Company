@@ -18,7 +18,7 @@ app.get("/", function (req, res) {
 });
 
 app.post("/contact", function (req, res) {
-  req.body.name;
+  console.log(req.body.name);
 
 
   var transporter = nodemailer.createTransport({
