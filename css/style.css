@@ -3437,10 +3437,6 @@ padding:120px 0 80px 0;
 width:100%;
 }
 
-.picframe{
-overflow:hidden !important;
-/* height:250px !important; */
-}
 
 #btn-close-x{
 width:100px;
@@ -5092,13 +5088,24 @@ section#section-home-plans {
 }
 
 .imgHeight{
-	height: 225px !important;
+	height: auto;
+	width: auto;
+/* max-height: 175px; */
+/* width: 500px;
+height: 500px;
+background-position: 50% 50%;
+background-repeat: no-repeat;
+background-size: cover; */
 }
 
 .imgHeight2{
 	height: 300px !important;
 }
 
+.picframe{
+overflow:hidden !important;
+/* height:250px !important; */
+}
 
 
 .row1{
