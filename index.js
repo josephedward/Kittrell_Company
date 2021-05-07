@@ -90,7 +90,7 @@ app.post("/contact", function (req, res) {
 
 app.get("/gmaps", function(req, res){
 
-  res.send(encrypt(process.env.gmaps_apikey))
+  res.send(encrypt(process.env.gmaps_1))
 })
 
 app.listen(PORT, function () {
