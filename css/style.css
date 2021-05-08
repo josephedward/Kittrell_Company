@@ -5090,22 +5090,18 @@ section#section-home-plans {
 .imgHeight{
 	height: auto;
 	width: auto;
-/* max-height: 175px; */
-/* width: 500px;
-height: 500px;
-background-position: 50% 50%;
-background-repeat: no-repeat;
-background-size: cover; */
 }
 
 .imgHeight2{
-	height: 300px !important;
+	width:500px !important;
+	height: 400px !important;
 }
 
 .picframe{
 overflow:hidden !important;
 /* height:250px !important; */
 }
+
 
 
 .row1{
@@ -5122,13 +5118,18 @@ overflow:hidden !important;
 }
 
 .spacer{
-	/* margin: 1%; */ 
-	/* padding: 10px; */
+	/* width:30%; */
+	/* margin: 1%;  */
+
+	/* padding: 1%; */
 }
 
 .border{
 	border: 3px solid tan;
 	outline: 3px solid gold;
+	/* margin: .25%; */
+	width:500px !important;
+	height: 400px !important;
 }
 
 .whiteText{
