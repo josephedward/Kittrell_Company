@@ -5093,8 +5093,8 @@ section#section-home-plans {
 }
 
 .imgHeight2{
-	width:500px !important;
-	height: 400px !important;
+	width:400px !important;
+	height: 300px !important;
 }
 
 .picframe{
@@ -5117,19 +5117,14 @@ overflow:hidden !important;
 	
 }
 
-.spacer{
-	/* width:30%; */
-	/* margin: 1%;  */
 
-	/* padding: 1%; */
-}
 
 .border{
 	border: 3px solid tan;
 	outline: 3px solid gold;
 	/* margin: .25%; */
-	width:500px !important;
-	height: 400px !important;
+	width:400px !important;
+	height: 300px !important;
 }
 
 .whiteText{
