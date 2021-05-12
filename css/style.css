@@ -67,11 +67,11 @@ body.de_light{
 }
 
 #wrapper{
-overflow:auto;
+overflow:hidden;
 }
 
 .de-navbar-left #wrapper{
-overflow:auto;
+overflow:visible;
 }
 
 /* ================================================== */
@@ -664,15 +664,9 @@ overflow:auto;
 		
 	
 	#content{
-		width: 100vw !important;
 	background:#18191b;
 	}
 
-
-	body{
-
-	width:100vw !important;
-	}
 
 /* ================================================== */
 /* section */
@@ -4907,7 +4901,7 @@ display:table;
 	}
 	
 	.de-navbar-left #wrapper{
-	overflow:auto;
+	overflow:hidden;
 	width:100%;
 	}
 	
