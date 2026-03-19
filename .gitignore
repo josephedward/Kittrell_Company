@@ -1,7 +1,4 @@
-extra
-node_modules
-node_modules/*
-/node_modules
 .*
 .DS_Store
+/node_modules
 site-redesign-proposal_031626.pdf
