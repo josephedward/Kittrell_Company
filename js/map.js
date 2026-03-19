@@ -54,6 +54,48 @@ axios.get("/gmaps").then(function (res) {
       title: "The Kittrell Company",
     });
     infowindow.open(map, marker);
+
+    // Blunts Bridge Estates
+    var bluntsBridgeEl = document.getElementById("map-blunts-bridge");
+    if (bluntsBridgeEl) {
+      var bluntsBridgeLatLng = new google.maps.LatLng(37.811375, -77.511655);
+      var bluntsBridgeMap = new google.maps.Map(bluntsBridgeEl, {
+        zoom: 15,
+        center: bluntsBridgeLatLng,
+        disableDefaultUI: false,
+        scrollwheel: true,
+      });
+      var bluntsBridgeMarker = new google.maps.Marker({
+        position: bluntsBridgeLatLng,
+        map: bluntsBridgeMap,
+        title: "Blunts Bridge Estates",
+      });
+      var bluntsBridgeInfo = new google.maps.InfoWindow({
+        content: "<strong>Blunts Bridge Estates</strong>",
+      });
+      bluntsBridgeInfo.open(bluntsBridgeMap, bluntsBridgeMarker);
+    }
+
+    // Belmont Green
+    var belmontGreenEl = document.getElementById("map-belmont-green");
+    if (belmontGreenEl) {
+      var belmontGreenLatLng = new google.maps.LatLng(37.6162017, -77.4647401);
+      var belmontGreenMap = new google.maps.Map(belmontGreenEl, {
+        zoom: 15,
+        center: belmontGreenLatLng,
+        disableDefaultUI: false,
+        scrollwheel: true,
+      });
+      var belmontGreenMarker = new google.maps.Marker({
+        position: belmontGreenLatLng,
+        map: belmontGreenMap,
+        title: "Belmont Green",
+      });
+      var belmontGreenInfo = new google.maps.InfoWindow({
+        content: "<strong>Belmont Green</strong>",
+      });
+      belmontGreenInfo.open(belmontGreenMap, belmontGreenMarker);
+    }
   };
 
 
