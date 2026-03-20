@@ -1,4 +1,5 @@
-// © Copyright 2016 - Archi v1.8.5 by Designesia 
+// © Copyright 2016 - Archi v1.8.5 by Designesia
+/* global WOW, enquire, classie */
 
 jQuery(document).ready(function () {
     'use strict';				// use strict mode
@@ -14,24 +15,24 @@ jQuery(document).ready(function () {
 
     var mobile_menu_show = 0;
 
-    if (de_color_style == 2) { $('body').addClass('de_light'); }
-    if (de_font_style == 2) { $('head').append('<link rel="stylesheet" href="css/font-style-2.css" type="text/css" />'); }
-    if (de_header_style == 2) { $('header').addClass('transparent') }
-    if (de_menu_separator == 2) {
+    if (de_color_style === 2) { $('body').addClass('de_light'); }
+    if (de_font_style === 2) { $('head').append('<link rel="stylesheet" href="css/font-style-2.css" type="text/css" />'); }
+    if (de_header_style === 2) { $('header').addClass('transparent') }
+    if (de_menu_separator === 2) {
         $('#mainmenu').addClass('line-separator');
-    } else if (de_menu_separator == 3) {
+    } else if (de_menu_separator === 3) {
         $('#mainmenu').addClass('circle-separator');
-    } else if (de_menu_separator == 4) {
+    } else if (de_menu_separator === 4) {
         $('#mainmenu').addClass('square-separator');
-    } else if (de_menu_separator == 5) {
+    } else if (de_menu_separator === 5) {
         $('#mainmenu').addClass('plus-separator');
-    } else if (de_menu_separator == 6) {
+    } else if (de_menu_separator === 6) {
         $('#mainmenu').addClass('strip-separator');
-    } else if (de_menu_separator == 0) { $('#mainmenu').addClass('no-separator'); }
-    if (de_header_layout == 2) { $('header').addClass('de_header_2'); $('header .info').show(); }
-    if (de_header_color == 2) { $('header').addClass('header-light'); }
-    if (de_header_sticky == 2) { $('header').addClass('header-scroll'); }
-    if (de_header_mobile_sticky == 1) { $('header').addClass('header-mobile-sticky'); }
+    } else if (de_menu_separator === 0) { $('#mainmenu').addClass('no-separator'); }
+    if (de_header_layout === 2) { $('header').addClass('de_header_2'); $('header .info').show(); }
+    if (de_header_color === 2) { $('header').addClass('header-light'); }
+    if (de_header_sticky === 2) { $('header').addClass('header-scroll'); }
+    if (de_header_mobile_sticky === 1) { $('header').addClass('header-mobile-sticky'); }
 
 
     // --------------------------------------------------
@@ -196,8 +197,6 @@ jQuery(document).ready(function () {
         });
 
         jQuery(".de-team-list").on("mouseenter", function () {
-            var h;
-            h = jQuery(this).find("img").css("height");
             jQuery(this).find(".team-desc").stop(true).animate({ 'top': "0px" }, 350, 'easeOutQuad');
             jQuery(this).find("img").stop(true).animate({ 'margin-top': "-100px" }, 400, 'easeOutQuad');
         }).on("mouseleave", function () {
@@ -216,7 +215,6 @@ jQuery(document).ready(function () {
             jQuery(this).find("img").css("height", "auto");
 
             jQuery(this).find("img").on('load', function () {
-                var w = jQuery(this).css("width");
                 var h = jQuery(this).css("height");
                 //nh = (h.substring(0, h.length - 2)/2)-48;
 
@@ -242,13 +240,6 @@ jQuery(document).ready(function () {
             newheight = (picheight.substring(0, picheight.length - 2) / 2) - 10;
             //alert(newheight);
             jQuery(this).parent().find(".pf_text").stop(true).animate({ 'margin-top': newheight }, 300, 'easeOutCubic');
-
-            var w = jQuery(this).find("img").css("width");
-            var h = jQuery(this).find("img").css("height");
-            var w = parseInt(w, 10);
-            var h = parseInt(h, 10);
-            var $scale = 1.2;
-            //alert(w);
 
             jQuery(this).find("img").stop(true).animate({
                 // width: w * $scale,
@@ -294,7 +285,7 @@ jQuery(document).ready(function () {
             jQuery('#jSplash').children('section').not('.selected').hide();
             jQuery('#jSplash').hide().fadeIn(800);
             init_de();
-            var timer = setInterval(function () {
+            setInterval(function () {
                 splashRotator();
             }, 1500);
         }
@@ -304,7 +295,7 @@ jQuery(document).ready(function () {
         jQuery(function () {
             var v_url = document.URL;
 
-            if (v_url.indexOf('#') != -1) {
+            if (v_url.indexOf('#') !== -1) {
                 var v_hash = v_url.substring(v_url.indexOf("#") + 1);
 
 
@@ -324,7 +315,7 @@ jQuery(document).ready(function () {
         var cur = jQuery('#jSplash').children('.selected');
         var next = jQuery(cur).next();
 
-        if (jQuery(next).length != 0) {
+        if (jQuery(next).length !== 0) {
             jQuery(next).addClass('selected');
         } else {
             jQuery('#jSplash').children('section:first-child').addClass('selected');
@@ -351,7 +342,7 @@ jQuery(document).ready(function () {
         });
     }
 
-    window.onresize = function (event) {
+    window.onresize = function () {
 
         enquire.register("screen and (min-width: 993px)", {
             match: function () {
@@ -397,9 +388,8 @@ jQuery(document).ready(function () {
         var screen_height = parseInt(jQuery(window).height(), 10);
         var header_mt = screen_height - header_height;
         var mq = window.matchMedia("(min-width: 993px)");
-        var ms = window.matchMedia("(min-width: 768px)");
 
-        window.addEventListener('scroll', function (e) {
+        window.addEventListener('scroll', function () {
 
             if (mq.matches) {
                 var distanceY = window.pageYOffset || document.documentElement.scrollTop,
@@ -422,7 +412,7 @@ jQuery(document).ready(function () {
 					var $document = $(document);
 					var vscroll = 0;
 					
-					if ($document.scrollTop() >= 50 && vscroll == 0) {
+					if ($document.scrollTop() >= 50 && vscroll === 0) {
 						jQuery("header.autoshow").removeClass("scrollOff");
 						jQuery("header.autoshow").addClass("scrollOn");
 						jQuery("header.autoshow").css("height", "auto");
@@ -436,7 +426,7 @@ jQuery(document).ready(function () {
 				
 				
                 // header bottom on scroll begin
-					var $document = $(document);
+					$document = $(document);
 					var header_height = parseInt(jQuery('header').height(), 10);
 					var screen_height = parseInt(jQuery(window).height(), 10);
 					var header_mt = screen_height - header_height;
@@ -635,36 +625,34 @@ jQuery(document).ready(function () {
         // --------------------------------------------------
         // revolution slider
         // --------------------------------------------------
-        var revapi;
-
-        revapi = jQuery('#revolution-slider').revolution({
+        jQuery('#revolution-slider').revolution({
             delay: 5000,
-						arrows: {
-				     style:"",
-				     enable:false,
-				     rtl:false,
-				     hide_onmobile:false,
-				     hide_onleave:false,
-				     hide_delay:200,
-				     hide_delay_mobile:1200,
-				     hide_under:0,
-				     hide_over:9999,
-				     tmp:'',
-				     left : {
-				            container:"slider",
-				            h_align:"left",
-				            v_align:"center",
-				            h_offset:20,
-				            v_offset:0,
-				     },
-				     right : {
-				            container:"slider",
-				            h_align:"right",
-				            v_align:"center",
-				            h_offset:20,
-				            v_offset:0
-				     }
-				  },
+            arrows: {
+                style: "",
+                enable: false,
+                rtl: false,
+                hide_onmobile: false,
+                hide_onleave: false,
+                hide_delay: 200,
+                hide_delay_mobile: 1200,
+                hide_under: 0,
+                hide_over: 9999,
+                tmp: '',
+                left: {
+                    container: "slider",
+                    h_align: "left",
+                    v_align: "center",
+                    h_offset: 20,
+                    v_offset: 0,
+                },
+                right: {
+                    container: "slider",
+                    h_align: "right",
+                    v_align: "center",
+                    h_offset: 20,
+                    v_offset: 0
+                }
+            },
             startwidth: 1170,
             startheight: 500,
             hideThumbs: 10,
@@ -707,13 +695,13 @@ jQuery(document).ready(function () {
             var rq_email = $('#rq_email').val();
             var rq_phone = $('#rq_phone').val();
 
-            if (rq_step == 1) {
-                if (rq_name.length == 0) { $('#rq_name').addClass("error_input"); } else { $('#rq_name').removeClass("error_input"); }
-                if (rq_email.length == 0) { $('#rq_email').addClass("error_input"); } else { $('#rq_email').removeClass("error_input"); }
-                if (rq_phone.length == 0) { $('#rq_phone').addClass("error_input"); } else { $('#rq_phone').removeClass("error_input"); }
+            if (rq_step === 1) {
+                if (rq_name.length === 0) { $('#rq_name').addClass("error_input"); } else { $('#rq_name').removeClass("error_input"); }
+                if (rq_email.length === 0) { $('#rq_email').addClass("error_input"); } else { $('#rq_email').removeClass("error_input"); }
+                if (rq_phone.length === 0) { $('#rq_phone').addClass("error_input"); } else { $('#rq_phone').removeClass("error_input"); }
             }
 
-            if (rq_name.length != 0 && rq_email.length != 0 && rq_phone.length != 0) {
+            if (rq_name.length !== 0 && rq_email.length !== 0 && rq_phone.length !== 0) {
                 jQuery("#rq_step_1").hide();
                 jQuery("#rq_step_2").fadeIn();
             }
@@ -754,8 +742,6 @@ jQuery(document).ready(function () {
             jQuery(this).next(".ac-content").slideToggle(200);
         })
 
-        var mb;
-
         // --------------------------------------------------
         // navigation for mobile
         // --------------------------------------------------
@@ -763,7 +749,7 @@ jQuery(document).ready(function () {
 
 
         jQuery('#menu-btn').on("click", function () {
-            if (mobile_menu_show == 0) {
+            if (mobile_menu_show === 0) {
                 jQuery('#mainmenu').slideDown();
                 mobile_menu_show = 1;
             } else {
@@ -780,7 +766,7 @@ jQuery(document).ready(function () {
 
         jQuery("#homepage nav a, .scroll-to").click(function (evn) {
 
-            if (this.href.indexOf('#') != -1) {
+            if (this.href.indexOf('#') !== -1) {
                 evn.preventDefault();
                 jQuery('html,body').scrollTo(this.hash, this.hash);
             }
@@ -788,7 +774,7 @@ jQuery(document).ready(function () {
 
         jQuery("a.btn").click(function (evn) {
 
-            if (this.href.indexOf('#') != -1) {
+            if (this.href.indexOf('#') !== -1) {
                 evn.preventDefault();
                 jQuery('html,body').scrollTo(this.hash, this.hash);
             }
@@ -796,7 +782,7 @@ jQuery(document).ready(function () {
 
         jQuery('.de-gallery .item .icon-info').on("click", function () {
             jQuery('.page-overlay').show();
-            url = jQuery(this).attr("data-value");
+            var url = jQuery(this).attr("data-value");
 
             jQuery("#loader-area .project-load").load(url, function () {
                 jQuery("#loader-area").slideDown(500, function () {
@@ -847,7 +833,7 @@ jQuery(document).ready(function () {
         var target = $('.center-y');
         var targetHeight = target.outerHeight();
 
-        $(document).scroll(function (e) {
+        $(document).scroll(function () {
             var scrollPercent = (targetHeight - window.scrollY) / targetHeight;
             if (scrollPercent >= 0) {
                 target.css('opacity', scrollPercent);
@@ -856,7 +842,7 @@ jQuery(document).ready(function () {
 
         jQuery(document).scroll(function () {
             jQuery('#homepage nav li a').each(function () {
-                if (this.href.indexOf('#') != -1) {
+                if (this.href.indexOf('#') !== -1) {
                     var href = jQuery(this).attr('href');
                     if (jQuery(window).scrollTop() > jQuery(href).offset().top - 140) {
                         jQuery('nav li a').removeClass('active');
@@ -878,12 +864,10 @@ jQuery(document).ready(function () {
         jQuery('.animated').fadeTo(0, 0);
         jQuery('.animated').each(function () {
             var imagePos = jQuery(this).offset().top;
-            var timedelay = jQuery(this).attr('data-delay');
 
             var topOfWindow = jQuery(window).scrollTop();
             if (imagePos < topOfWindow + 300) {
                 jQuery(this).fadeTo(1, 500);
-                var $anim = jQuery(this).attr('data-animation');
             }
         });
 
@@ -925,7 +909,7 @@ jQuery(document).ready(function () {
             var imagePos = jQuery(this).offset().top;
 
             var topOfWindow = jQuery(window).scrollTop();
-            if (imagePos < topOfWindow + 500 && v_count == '0') {
+            if (imagePos < topOfWindow + 500 && v_count === '0') {
 
                 jQuery(function ($) {
 

@@ -77,6 +77,8 @@ app.post("/contact", function (req, res) {
       console.log("Admin Email sent: " + info.response);
     }
   });
+
+  res.sendStatus(200);
 });
 
 app.get("/gmaps", function (req, res) {
@@ -88,6 +90,6 @@ app.listen(PORT, function () {
 });
 
 function encrypt(message = "", key = "") {
-  var message = CryptoJS.AES.encrypt(message, key);
-  return message.toString();
+  var encrypted = CryptoJS.AES.encrypt(message, key);
+  return encrypted.toString();
 }

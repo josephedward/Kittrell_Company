@@ -1,54 +1,54 @@
  $(document).ready(function(){
         $('#send_message').click(function(e){
-            
+
             //Stop form submission & check the validation
             e.preventDefault();
-            
+
             // Variable declaration
             var error = false;
             var name = $('#form_name').val();
             var email = $('#form_email').val();
-			var phone = $('#phone').val();
+            var phone = $('#phone').val();
             var message = $('#form_message').val();
-			
-			$('#name,#email,#phone,#message').click(function(){
-				$(this).removeClass("error_input");
-			});
-            
-         	// Form field validation
-            if(name.length == 0){
-                var error = true;
+
+            $('#name,#email,#phone,#message').click(function(){
+                $(this).removeClass("error_input");
+            });
+
+            // Form field validation
+            if(name.length === 0){
+                error = true;
                 $('#name').addClass("error_input");
             }else{
                 $('#name').removeClass("error_input");
             }
-            if(email.length == 0 || email.indexOf('@') == '-1'){
-                var error = true;
+            if(email.length === 0 || email.indexOf('@') === '-1'){
+                error = true;
                 $('#email').addClass("error_input");
             }else{
                 $('#email').removeClass("error_input");
             }
-			if(phone.length == 0){
-                var error = true;
+            if(phone.length === 0){
+                error = true;
                 $('#phone').addClass("error_input");
             }else{
                 $('#phone').removeClass("error_input");
             }
-            if(message.length == 0){
-                var error = true;
+            if(message.length === 0){
+                error = true;
                 $('#message').addClass("error_input");
             }else{
                 $('#message').removeClass("error_input");
             }
-            
+
             // If there is no validation error, next to process the mail function
-            if(error == false){
+            if(error === false){
                // Disable submit button just after the form processed 1st time successfully.
                 $('#send_message').attr({'disabled' : 'true', 'value' : 'Sending...' });
-                $('#mail_sent').fadeIn(500);    
+                $('#mail_sent').fadeIn(500);
                 setTimeout(function () {
-                   window.location.reload(); 
-                }, 3000);            
+                   window.location.reload();
+                }, 3000);
 				// /* Post Ajax function of jQuery to get all the data from the submission of the form as soon as the form sends the values to email.php*/
                 // $.post("email.php", $("#contact_form").serialize(),function(result){
                 //     //Check the result set from email.php file.
@@ -65,5 +65,5 @@
                 //     }
                 // });
             }
-        });    
+        });
     });

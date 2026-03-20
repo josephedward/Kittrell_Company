@@ -5,11 +5,10 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "start-dev": "sudo ./scripts/clear_ports.sh && node index.js",
-    "dev": "node index.js",
-    "restart": "sudo ./scripts/clear_ports.sh && node index.js",
-    "install:clean": "rm -rf node_modules package-lock.json && npm install",
-    "logs": "node index.js 2>&1 | tee server.log"
+    "dev": "nodemon index.js",
+    "ci": "rm -rf node_modules package-lock.json && npm install",
+    "logs": "node index.js 2>&1 | tee server.log",
+    "lint": "eslint . --ext .js"
   },
   "repository": {
     "type": "git",
@@ -28,5 +27,9 @@
     "express": "^4.22.1",
     "nodemailer": "^7.0.13",
     "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.1",
+    "nodemon": "^3.1.14"
   }
 }
