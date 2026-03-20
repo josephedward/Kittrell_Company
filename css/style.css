@@ -3464,8 +3464,11 @@ span.overlay {
 text-align: center;
 display: block;
 width: 100px;
-background: #111;
+background: rgba(17,17,17,0);
 position: absolute;
+top: 0;
+left: 0;
+transition: background 0.3s ease;
 }
 
 .de_light span.overlay {
@@ -3495,6 +3498,12 @@ text-align:center;
 
 .de-gallery .overlay  .pf_text{
 display: inline-block;
+opacity: 0;
+transition: opacity 0.3s ease;
+}
+
+.de-gallery .item .picframe:hover .pf_text {
+opacity: 1;
 }
 
 .de-gallery .project-name{
@@ -5099,6 +5108,7 @@ section#section-home-plans {
 
 .picframe{
 overflow:hidden !important;
+position:relative;
 /* height:250px !important; */
 }
 
@@ -5120,8 +5130,8 @@ overflow:hidden !important;
 
 
 .border{
-	border: 3px solid tan;
-	outline: 3px solid gold;
+	border: 3px solid #2e7d32;
+	outline: 3px solid #66bb6a;
 	/* margin: .25%; */
 	width:400px !important;
 	height: 300px !important;
