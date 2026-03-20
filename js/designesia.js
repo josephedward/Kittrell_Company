@@ -228,13 +228,13 @@ jQuery(document).ready(function () {
         // --------------------------------------------------
         // portfolio hover
         // --------------------------------------------------
-        jQuery('.overlay').fadeTo(1, 0);
+        jQuery('.overlay').css('background', 'rgba(17,17,17,0)');
 
         // gallery hover
         jQuery(".item .picframe").on("mouseenter", function () {
             jQuery(this).parent().find(".overlay").width(jQuery(this).find("img").css("width"));
             jQuery(this).parent().find(".overlay").height(jQuery(this).find("img").css("height"));
-            jQuery(this).parent().find(".overlay").stop(true).fadeTo(300, .8);
+            jQuery(this).parent().find(".overlay").stop(true).css('background', 'rgba(17,17,17,0.8)');
             var picheight = jQuery(this).find("img").css("height");
             var newheight;
             newheight = (picheight.substring(0, picheight.length - 2) / 2) - 10;
@@ -254,7 +254,7 @@ jQuery(document).ready(function () {
             var picheight = jQuery(this).find("img").css("height");
             newheight = (picheight.substring(0, picheight.length - 2) / 2) - 10;
             jQuery(this).parent().find(".pf_text").stop(true).animate({ 'margin-top': newheight - 30 }, 300, 'easeOutCubic');
-            jQuery(this).parent().find(".overlay").stop(true).fadeTo(300, 0);
+            jQuery(this).parent().find(".overlay").stop(true).css('background', 'rgba(17,17,17,0)');
             jQuery(this).find("img").stop(true).animate({
                 width: '100%',
                 height: '100%',
@@ -266,7 +266,7 @@ jQuery(document).ready(function () {
 
 
 
-        jQuery('.overlay').fadeTo(1, 0);
+        jQuery('.overlay').css('background', 'rgba(17,17,17,0)');
         // team hover
     }
 
