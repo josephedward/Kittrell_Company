@@ -22,7 +22,6 @@
   },
   "homepage": "https://github.com/josephedward/The_Kittrell_Company#readme",
   "dependencies": {
-    "crypto-js": "^4.2.0",
     "dotenv": "^8.2.0",
     "express": "^4.22.1",
     "nodemailer": "^7.0.13",

@@ -6,7 +6,6 @@ const PORT = process.env.PORT || 3000;
 app.use(express.static("./"));
 const path = require("path");
 var nodemailer = require("nodemailer");
-const CryptoJS = require("crypto-js");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -81,15 +80,7 @@ app.post("/contact", function (req, res) {
   res.sendStatus(200);
 });
 
-app.get("/gmaps", function (req, res) {
-  res.send(encrypt(process.env.gmaps_1));
-});
-
 app.listen(PORT, function () {
   console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
 });
 
-function encrypt(message = "", key = "") {
-  var encrypted = CryptoJS.AES.encrypt(message, key);
-  return encrypted.toString();
-}

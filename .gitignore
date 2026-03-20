@@ -1,12 +1,5 @@
-extra
-node_modules
-node_modules/*
-/node_modules
 .*
 .DS_Store
-.DS_Store
-.DS_Store
-.DS_Store
-/node_modules
 /node_modules
 site-redesign-proposal_031626.pdf
+images/gallery/update_032026
