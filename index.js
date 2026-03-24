@@ -80,6 +80,11 @@ app.post("/contact", function (req, res) {
   res.sendStatus(200);
 });
 
+// Redirect all unmatched routes to homepage
+app.use(function (req, res) {
+  res.redirect(301, "/");
+});
+
 app.listen(PORT, function () {
   console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
 });
