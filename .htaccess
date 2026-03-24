@@ -1,2 +1,0 @@
-# Redirect all 404 Not Found errors to the homepage
-ErrorDocument 404 /index.html
