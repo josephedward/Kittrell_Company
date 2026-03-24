@@ -1,0 +1,19 @@
+# Dependencies
+node_modules/
+
+# Third-party slider plugin (all vendor)
+rs-plugin/
+
+# Font icon vendor scripts
+fonts/
+
+# Vendor / minified JS in js/
+js/*.min.js
+js/jquery*.js
+js/bootstrap*.js
+js/owl.carousel.js
+js/jpreLoader.js
+js/wow*.js
+js/enquire*.js
+js/easing.js
+js/classie.js

@@ -1,6 +1,14 @@
-.*
 .DS_Store
+.env
+.env.*
+.idea
+.vscode
+.sass-cache
+.cache
+.npm
+.eslintcache
 /node_modules
 site-redesign-proposal_031626.pdf
 images/gallery/update_032026
 
+/.agent
