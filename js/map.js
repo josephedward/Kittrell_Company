@@ -29,7 +29,7 @@ window.addEventListener('load', function () {
       maxZoom: 19,
     }).addTo(bluntsBridgeMap);
     L.marker([37.811375, -77.511655]).addTo(bluntsBridgeMap)
-      .bindPopup('<strong>Blunts Bridge Estates</strong>').openPopup();
+      .bindPopup('<strong>Blunts Bridge Estates</strong><br>Blunts Bridge Road<br>Hanover County, VA 23005').openPopup();
     bluntsBridgeMap.invalidateSize();
   }
 
@@ -42,7 +42,7 @@ window.addEventListener('load', function () {
       maxZoom: 19,
     }).addTo(belmontGreenMap);
     L.marker([37.6162017, -77.4647401]).addTo(belmontGreenMap)
-      .bindPopup('<strong>Belmont Green</strong>').openPopup();
+      .bindPopup('<strong>Belmont Green</strong><br>Lakeside<br>Henrico County, VA 23228').openPopup();
     belmontGreenMap.invalidateSize();
   }
 });
